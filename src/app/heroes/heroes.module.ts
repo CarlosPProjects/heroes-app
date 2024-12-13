@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { HeroesRoutingModule } from './heroes-routing.module';
 
-
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    HeroesRoutingModule,
     HeroesRoutingModule
   ]
 })
