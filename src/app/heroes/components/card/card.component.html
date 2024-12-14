@@ -1,8 +1,12 @@
-<div class="card">
-  <div class="card-header">
-    <h2>{{ hero.name }}</h2>
+<div class="rounded-xl shadow overflow-hidden">
+  <div class="aspect-square bg-neutral-200">
+    <!-- <img [src]="hero.image" [alt]="hero.name" class="w-full h-full object-cover"> -->
   </div>
-  <div class="card-body">
-    <p>{{ hero.alterEgo }}</p>
+  <div class="p-4 flex flex-col gap-2">
+    <h2 class="text-xl font-semibold">{{ hero.name }}</h2>
+    <p class="text-sm text-gray-400">{{ hero.alter_ego }}</p>
+    <span class="w-fit mt-2 px-4 py-1 rounded-full bg-black text-gray-100 text-sm font-semibold">
+      {{ hero.publisher }}
+    </span>
   </div>
 </div>
