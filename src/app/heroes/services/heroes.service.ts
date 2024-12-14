@@ -17,4 +17,8 @@ export class HeroesService {
   public getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.ENDPOINT);
   }
+
+  public getHeroById(id: string): Observable<Hero> {
+    return this.http.get<Hero>(`${this.ENDPOINT}/${id}`);
+  }
 }
