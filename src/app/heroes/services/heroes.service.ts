@@ -10,17 +10,11 @@ import { Hero } from '../interfaces/hero.interface';
 })
 export class HeroesService {
 
-  public heroes: Hero[] = [];
-
   private ENDPOINT: string = environment.ENDPOINT;
 
   constructor(private http: HttpClient) { }
 
-  private getHeroes(): void {
-    this.http
-      .get<Hero[]>(this.ENDPOINT)
-      .subscribe((data: Hero[]) => {
-        this.heroes = data;
-      })
+  public getHeroes(): Observable<Hero[]> {
+    return this.http.get<Hero[]>(this.ENDPOINT);
   }
 }

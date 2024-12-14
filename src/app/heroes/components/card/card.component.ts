@@ -9,5 +9,5 @@ import { Hero } from '../../interfaces/hero.interface';
   styles: ``
 })
 export class CardComponent {
-  @Input() hero?: Hero;
+  @Input() hero: Hero | null = null;
 }
