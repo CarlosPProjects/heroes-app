@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Hero } from '../../interfaces/hero.interface';
 
 @Component({
@@ -9,5 +9,5 @@ import { Hero } from '../../interfaces/hero.interface';
   styles: ``
 })
 export class CardComponent {
-  @Input() hero: Hero | null = null;
+  @Input() hero!: Hero;
 }

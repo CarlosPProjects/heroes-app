@@ -13,12 +13,12 @@ import { CardComponent } from '../../components/card/card.component';
 export class ListPageComponent implements OnInit {
   public heroes: Hero[] = [];
 
-  constructor(private heroesService: HeroesService) {}
+  constructor(private heroesService: HeroesService) { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.heroesService.getHeroes()
-        .subscribe(heroes => this.heroes = heroes);
-    }, 2000);
+    this.heroesService.getHeroes()
+      .subscribe(heroes => {
+        this.heroes = heroes;
+      });
   }
 }

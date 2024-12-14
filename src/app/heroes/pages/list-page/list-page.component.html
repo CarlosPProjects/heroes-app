@@ -1,13 +1,11 @@
-<div
-  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
->
-  @if (heroes.length === 0) {
-    <div class="col-span-4">
-      <h2>Loading...</h2>
-    </div>
-  } @else {
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  @if(heroes.length > 0) {
     @for (hero of heroes; track $index) {
       <hero-card [hero]="hero"></hero-card>
     }
+  } @else {
+    <div>
+      <h2>Loading...</h2>
+    </div>
   }
 </div>
