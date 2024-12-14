@@ -21,4 +21,8 @@ export class HeroesService {
   public getHeroById(id: string): Observable<Hero> {
     return this.http.get<Hero>(`${this.ENDPOINT}/${id}`);
   }
+
+  public createNewHero(hero: Hero): void {
+    this.http.post(this.ENDPOINT, hero);
+  }
 }
