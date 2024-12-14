@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CardComponent } from '../../components/card/card.component';
 import { Hero, Publisher } from '../../interfaces/hero.interface';
+import { HeroesService } from '../../services/heroes.service';
 
 @Component({
   selector: 'app-list-page',
@@ -10,7 +11,7 @@ import { Hero, Publisher } from '../../interfaces/hero.interface';
   styles: ``
 })
 export class ListPageComponent {
-   defaultHero: Hero = {
+  public defaultHero: Hero = {
     id: 1,
     name: 'Hero',
     publisher: Publisher.DCComics,
@@ -18,4 +19,11 @@ export class ListPageComponent {
     firstAppearance: 'First Appearance',
     characters: ['Character 1', 'Character 2'],
   }
+
+  constructor(private heroesService: HeroesService) { }
+
+  get heroes() : Hero[] {
+    return this.heroesService.heroes;
+  }
+
 }

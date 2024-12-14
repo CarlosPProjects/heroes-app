@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HeroesRoutingModule } from './heroes-routing.module';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [],
@@ -9,6 +10,10 @@ import { HeroesRoutingModule } from './heroes-routing.module';
     CommonModule,
     HeroesRoutingModule,
     HeroesRoutingModule
+  ],
+  providers: [
+    provideHttpClient()
   ]
+
 })
 export class HeroesModule { }
